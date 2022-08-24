@@ -135,6 +135,62 @@
 
 
 
+Komento.require()
+.script('site/form/form')
+.done(function($) {
+
+	$('[data-kt-form]').implement(Komento.Controller.Form, {
+		"location": false,
+		"location_key": "",
+		"attachments": {
+			"enabled": false,
+			"upload_max_size": "0.100mb",
+			"upload_max_files": "1",
+			"extensions": "bmp,csv,doc,gif,ico,jpg,jpeg,odg,odp,ods,odt,pdf,png,ppt,rar,txt,xcf,xls,zip"
+		},
+		"bbcode": Komento.bbcode,
+		"showCode": false,
+		"showCaptcha": true,
+		"recaptcha": true,
+		"recaptcha_invisible": false,
+		"markupSet": Komento.bbcodeButtons
+	});
+});
+
+
+</script>
+ <script type="text/javascript">
+
+
+Komento.ready(function($){
+	// declare master namespace variable for shared values
+	Komento.component = "com_content";
+	Komento.cid = "15372";
+	Komento.contentLink	= "https://playsector.ru/articles/standoff-2-besplatnye-rabochie-promokody";
+	Komento.sort = "latest";
+	Komento.loadedCount = parseInt(10);
+	Komento.totalCount = parseInt(681);
+	Komento.bbcode = false;
+	Komento.backgrounds = false;
+	Komento.smileys = false;
+
+	});
+
+
+Komento
+.require()
+.script('site/comments/wrapper', 'site/comments/list')
+
+.done(function($) {
+
+	// Implement the wrapper
+	$('[data-kt-wrapper]').implement(Komento.Controller.Wrapper, {
+		"total": parseInt("681"),
+		"lastchecktime": '2022-08-24 11:23:59',
+		"initList": true,
+		"ratings": false,
+		"prism": false	});
+});
 
 
 
